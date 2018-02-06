@@ -1,0 +1,74 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <!--<div class="jumbotron">-->
+        <!--<h1>ElectroBIT</h1>-->
+        <!--<p>Добро пожаловать!</p>-->
+    <!--</div>-->
+    <header class="header_top">
+        <div class="header_inner">
+            <nav class='navbar navbar-expand-lg navbar-dark navbar-custom sticky-top'>
+
+                <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportContent" aria-controls="navbarSupportContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-text">Electro BIT</span>
+                </button>
+
+                <div class="header_logo">
+                    <a href="#" class="navbar-brand">
+			            <img src="{% static 'app/images/logo1.png' %}" width="35" height="35" alt="logo">
+		            </a>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportContent">
+                    <ul class="navbar-nav mr-auto header_menu">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Магазин</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Платежи</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Мой Банк</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Red</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Бонус</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Гид</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Переводы</a>
+                        </li>
+                    </ul>
+                    <div class="header_auth">
+                        <a href="#">
+                            <img src="{% static 'app/images/auth.png' %}" width="30" height="30" alt="logo">
+                        </a>
+                    </div>
+                </div>
+
+        	</nav>
+        </div>
+    </header>
+
+    <header class="header">
+        <div class="header_inner">
+            <row>
+                <div class="col col-md-8 bg-success">search</div>
+                <div class="col col-md-2 bg-warning">city</div>
+                <div class="col col-md-2 bg-info">phone</div>
+            </row>
+        </div>
+    </header>
+{% endblock %}

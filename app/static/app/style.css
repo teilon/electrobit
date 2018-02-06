@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.jumbotron{
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+.header_top{
+    background:#4a4a4a;
+    line-height: 2.5;
+}
+.header_inner{
+    width:960px;
+    /*height:74px;*/
+    margin:0 auto;
+    padding:0;
+}
+.navbar-custom .navbar-nav>.nav-item.active>.nav-link,
+.navbar-custom .navbar-nav>.nav-item .nav-link:focus,
+.navbar-custom .navbar-nav>.nav-item .nav-link:hover{
+    color:#f14635;
+}
+.header_menu{
+    margin:0;
+    padding:0;
+    list-style:none;
+    color:#f2f2f2;
+    position:relative;
+    font-size: 17px;
+}
+.header_menu a{
+    color:#f2f2f2;
+}
+
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+	height: 50px;
+	width: 50px;
+}
