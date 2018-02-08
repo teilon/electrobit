@@ -13,7 +13,7 @@ body{
 }
 .header_inner{
     width:960px;
-    /*height:74px;*/
+    height:74px;
     margin:0 auto;
     padding:0;
 }
@@ -33,7 +33,9 @@ body{
 .header_menu a{
     color:#f2f2f2;
 }
-
+.row-search{
+    line-height: 2.5;
+}
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon{

@@ -9,8 +9,71 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <link rel="stylesheet" href="{% static 'app/app.css' %}">
 </head>
 <body>
+
+    <header class="header_top">
+        <div class="header_inner">
+            <nav class='navbar navbar-expand-lg navbar-dark navbar-custom sticky-top'>
+
+                <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportContent" aria-controls="navbarSupportContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-text">Electro BIT</span>
+                </button>
+
+                <div class="header_logo">
+                    <a href="#" class="navbar-brand">
+			            <img src="{% static 'app/images/logo1.png' %}" width="35" height="35" alt="logo">
+		            </a>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarSupportContent">
+                    <ul class="navbar-nav mr-auto header_menu">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home' %}">Магазин</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Платежи</a>
+                        </li>
+                        <!--<li class="nav-item">-->
+                            <!--<a class="nav-link" href="#">Мой Банк</a>-->
+                        <!--</li>-->
+                        <!--<li class="nav-item">-->
+                            <!--<a class="nav-link" href="#">Red</a>-->
+                        <!--</li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Бонусы</a>
+                        </li>
+                        <!--<li class="nav-item">-->
+                            <!--<a class="nav-link" href="#">Гид</a>-->
+                        <!--</li>-->
+                        <!--<li class="nav-item">-->
+                            <!--<a class="nav-link" href="#">Maps</a>-->
+                        <!--</li>-->
+                        <!--<li class="nav-item">-->
+                            <!--<a class="nav-link" href="#">Переводы</a>-->
+                        <!--</li>-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Наши субподрядчики</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="header_auth">
+                        <a href="#">
+                            <img src="{% static 'app/images/auth.png' %}" width="30" height="30" alt="logo">
+                        </a>
+                    </div>
+                </div>
+
+        	</nav>
+        </div>
+    </header>
 
     {% block content %}{% endblock %}
 
