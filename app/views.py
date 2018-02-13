@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 
+from .forms import ParseForm
+
+from .sub_app import saiman_parse
+
 
 def home(request):
 
@@ -138,3 +142,18 @@ def group(request):
 def product(request, name):
     context = {'name': name}
     return render(request, 'app/product.html', context)
+
+
+def parser(request):
+    if request.method == 'POST':
+        parser = saiman_parse
+        if parser.runnable:
+            result = parser.start_parse()
+            if result is not None and result != []:
+                context = {'data': result}
+                return render(request, 'app/saiman_data.html', context)
+
+    form = ParseForm()
+    context = {'form': form}
+
+    return render(request, 'app/parser.html', context)

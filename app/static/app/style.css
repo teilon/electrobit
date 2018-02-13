@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -41,4 +43,16 @@ body{
 .carousel-control-prev-icon{
 	height: 50px;
 	width: 50px;
+}
+.parser-list{
+    *zoom:1;
+    width:960px;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:42px;
+    border-radius:100%
+}
+.item-form{
+    margin-top:42px;
 }

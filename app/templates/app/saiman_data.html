@@ -1,0 +1,24 @@
+<!--data = {-->
+    <!--'img_source': img_source,-->
+    <!--'name': name,-->
+    <!--'description': description,-->
+    <!--'cost': cost-->
+<!--}-->
+
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<ul>
+{% for d in data %}
+    <li class="ddl_product">
+        <img src="{{ d.img_source }}" alt="">
+        <h4>{{ d.name }}</h4>
+        <p>{{ d.description }}</p>
+        <span>{{ d.cost }}</span>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

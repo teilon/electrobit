@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>P.A.R.S.E.R.</h1>
+    <p>get products from sites</p>
+</div>
+<div class="item-cards-grid item-form">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-success" value="Saiman.kz" />
+    </form>
+</div>
+
+{% endblock %}
