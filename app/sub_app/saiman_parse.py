@@ -12,6 +12,7 @@ host_counters = 'http://saiman.kz/products/schetchiki/'
 host_transformators = 'http://saiman.kz/products/transformatory-toka/'
 host_boards = 'http://saiman.kz/products/shkafy-ucheta/'
 
+
 def start_parse():
     print('start parse')
 

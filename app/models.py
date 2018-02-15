@@ -7,6 +7,7 @@ class Company(models.Model):
 
     name = models.CharField(max_length=20, default='company name')
     description = models.TextField(default='')
+    article = models.IntegerField(default=0, null=False)
 
     def __str__(self):
         return '{}'.format(self.name)
@@ -15,6 +16,7 @@ class Company(models.Model):
 class Category(models.Model):
 
     name = models.CharField(max_length=20, default='category name')
+    article = models.IntegerField(default=0, null=False)
 
     def __str__(self):
         return '{}'.format(self.name)
@@ -30,6 +32,7 @@ class Product(models.Model):
     image = models.ImageField(null=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    article = models.IntegerField(default=0, null=False)
 
     def __str__(self):
         return '{} [{}]'.format(self.name, self.company.name)

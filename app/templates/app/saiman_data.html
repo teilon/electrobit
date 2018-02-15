@@ -13,7 +13,8 @@
 <ul>
 {% for d in data %}
     <li class="ddl_product">
-        <img src="{{ d.img_source }}" alt="">
+        <!--<img src="{{ d.img_source }}" alt="">-->
+        {{ d.img_source }}
         <h4>{{ d.name }}</h4>
         <p>{{ d.description }}</p>
         <span>{{ d.cost }}</span>
