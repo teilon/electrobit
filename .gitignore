@@ -3,3 +3,6 @@
 electrobit/__pycache__
 app/__pycache__
 app/migrations/__pycache__
+electrbit/app/sub_app/__pycache__
+
+app/static/app/images/product

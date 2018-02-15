@@ -144,91 +144,20 @@ def product(request, name):
     return render(request, 'app/product.html', context)
 
 
-from PIL import Image
-# import urllib
-# from cStringIO import StringIO
-import requests
+from . import data_collector
 
 
 def parser(request):
     if request.method == 'POST':
-        parser = saiman_parse
-        if parser.runnable:
-            result = parser.start_parse()
-            # if result is not None and result != []:
-            #     context = {'data': result}
-            #     return render(request, 'app/saiman_data.html', context)
-
-            # 'img_source': img_source,
-            # 'name': name,
-            # 'description': description,
-            # 'cost': cost
-
-
-            url = result[0]['img_source']
-            # im = StringIO(img_file.read())
-            # resized_image = Image.open(im)
-
-            # file = StringIO(urllib.urlopen(url).read())
-            # img = Image.open(file)
-
-            # img = Image.open(urllib2.urlopen(url))
-
-            response = requests.get(url, stream=True)
-            response.raw.decode_content = True
-            img = Image.open(response.raw)
-
-            one = [{
-                'img_source': img,
-                'name': result[0]['name'],
-                'description': result[0]['description'],
-                'cost': result[0]['cost']
-            }]
-
-            context = {'data': result}
-            return render(request, 'app/saiman_data.html', context)
+        collector = data_collector
+        collector.start_collect()
+        # parser = saiman_parse
+        # if parser.runnable:
+        #     result = parser.start_parse()
+        #     if result is not None and result != []:
+        #         context = {'data': result}
+        #         return render(request, 'app/saiman_data.html', context)
 
     form = ParseForm()
     context = {'form': form}
-
     return render(request, 'app/parser.html', context)
-
-
-from .models import Company, Category, Product
-
-
-def data_collect(request):
-    parser = saiman_parse
-    data = parser.start_parse()
-
-    com = Company(name='Saiman', description='Saiman description', article=11)
-    com.save()
-    cat = Category(name='Counter', article=11)
-    cat.save()
-# 'img_source': img_source,
-# 'name': name,
-# 'description': description,
-# 'cost': cost
-    for d in data:
-        img_file = urllib.urlopen(d['img_source'])
-        im = StringIO(img_file.read())
-        resized_image = Image.open(im)
-        p = Product(
-            name=d['name'],
-            description=d['description'],
-            description_short=d['description'],
-            price=d['cost'],
-            price_opt=d['cost'],
-            image=resized_image,
-            company=com,
-            category=cat,
-            article=get_article(com.article, cat.article)
-        )
-        p.save()
-
-
-
-    return redirect('home')
-
-def get_article(company, category):
-    return int(str(company) + str(category))
