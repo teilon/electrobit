@@ -61,7 +61,7 @@ def get_category_object(category_name):
 
 
 def save_image(url):
-    image_name = 'app/static/app/images/product/{}'.format(get_name())
+    image_name = 'app/images/product/{}'.format(get_name())
 
     response = requests.get(url, stream=True)
     response.raw.decode_content = True

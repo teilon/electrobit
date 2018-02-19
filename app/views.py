@@ -1,127 +1,68 @@
 from django.shortcuts import render, redirect
-
+from django.views import generic
 from .forms import ParseForm
 
 from .sub_app import saiman_parse
 
+from .models import Product, Category
 
-def home(request):
 
-    list = [
-        {
-            'name': '«Орман» СО-Э711',
-            'text': 'Статический счетчик.',
-            'price': '5 900 ₸',
-            'price_min': '5 850 ₸',
-            'img': 'CC.jpg'
-        },
-        {
-            'name': '«Орман» СО-Э711',
-            'text': 'Статический счетчик.',
-            'price': '2 900 ₸',
-            'price_min': '2 850 ₸',
-            'img': 'CE.jpg'
-        },
-        {
-            'name': '«Орман» СО-Э711',
-            'text': 'Статический счетчик.',
-            'price': '18 200 ₸',
-            'price_min': '18 100 ₸',
-            'img': 'CL.jpg'
-        },
-        {
-            'name': '«Орман» СО-Э711 PLC',
-            'text': 'Статический счетчик.',
-            'price': '22 000 ₸',
-            'price_min': '21 900 ₸',
-            'img': 'CU.jpg'
-        },
-        {
-            'name': '«Орман» Т1 СО-Э711',
-            'text': 'Статический счетчик.',
-            'price': '2 900 ₸',
-            'price_min': '2 850 ₸',
-            'img': 'CV.jpg'
-        },
-        {
-            'name': '«Дала» СА4-Э720',
-            'text': 'Счетчик прямого включения.',
-            'price': '10 400 ₸',
-            'price_min': '10 350 ₸',
-            'img': 'NA.jpg'
-        },
-        {
-            'name': '«Дала» СА4-Э720 Т1',
-            'text': 'Счетчик прямого включения.',
-            'price': '11 600 ₸',
-            'price_min': '11 550 ₸',
-            'img': 'NB.jpg'
-        },
-        {
-            'name': '«Дала» СА4-Э720 ТХ',
-            'text': 'Счетчик прямого включения.',
-            'price': '13 600 ₸',
-            'price_min': '13 550 ₸',
-            'img': 'NC.jpg'
-        },
-        {
-            'name': '«Дала» СА4У-Э720',
-            'text': 'Счетчик трансформаторного включения.',
-            'price': '9 400 ₸',
-            'price_min': '9 350 ₸',
-            'img': 'ND.jpg'
-        },
-        {
-            'name': '«Дала» СА4У-Э720 Т1',
-            'text': 'Счетчик трансформаторного включения.',
-            'price': '11 200 ₸',
-            'price_min': '11 150 ₸',
-            'img': 'NE.jpg'
-        },
-        {
-            'name': '«Дала» СА4У-Э720 ТХ',
-            'text': 'Счетчик трансформаторного включения.',
-            'price': '12 900 ₸',
-            'price_min': '12 850 ₸',
-            'img': 'NF.jpg'
-        },
-        {
-            'name': '«Дала» TX P PLC IP П RS',
-            'text': 'Электронный счетчик.',
-            'price': '42 000 ₸',
-            'price_min': '41 800 ₸',
-            'img': 'NL.jpg'
-        },
-        {
-            'name': '«Дала» СА3У-Э720',
-            'text': 'Счетчик трансформаторного включения.',
-            'price': '9 700 ₸',
-            'price_min': '9 650 ₸',
-            'img': 'NM.jpg'
-        },
-        {
-            'name': '«Дала» СА4-Э720',
-            'text': 'Счетчик прямого включения.',
-            'price': '14 000 ₸',
-            'price_min': '13 950 ₸',
-            'img': 'NX.jpg'
-        },
-        {
-            'name': '«Дала» СА4-Э720 ТХ',
-            'text': 'Счетчик прямого включения.',
-            'price': '18 400 ₸',
-            'price_min': '18 350 ₸',
-            'img': 'NY.jpg'
-        },
-    ]
-    title_list = ['«Орман»',
-                  '«Дала»',
-                  ]
+class HomeIndex(generic.ListView):
+    template_name = 'app/home_index.html'
+    context_object_name = 'list'
 
-    context = {'list': list,
-               'title_list': title_list,
-               }
-    return render(request, 'app/home.html', context)
+    def get_queryset(self):
+        # Content.objects.all().order_by('?')[:100]
+        # return Product.objects.all().order_by('?')[:10]
+        return Product.objects.all().order_by('?')[:10]
+
+
+class CounterIndex(generic.ListView):
+    template_name = 'app/home_view.html'
+    context_object_name = 'list'
+
+    def get_queryset(self):
+        cat = Category.objects.get(name='Counter')
+        return cat.product_set.all()
+
+
+class CounterIndexWithTitle(CounterIndex):
+    def get_context_data(self, **kwargs):
+        context = super(CounterIndex, self).get_context_data(**kwargs)
+        context['title'] = 'Счетчики'
+        return context
+
+
+class TransformatorIndex(generic.ListView):
+    template_name = 'app/home_view.html'
+    context_object_name = 'list'
+
+    def get_queryset(self):
+        cat = Category.objects.get(name='Transformator')
+        return cat.product_set.all()
+
+
+class TransformatorIndexWithTitle(TransformatorIndex):
+    def get_context_data(self, **kwargs):
+        context = super(TransformatorIndex, self).get_context_data(**kwargs)
+        context['title'] = 'Трансформаторы'
+        return context
+
+
+class BoardIndex(generic.ListView):
+    template_name = 'app/home_view.html'
+    context_object_name = 'list'
+
+    def get_queryset(self):
+        cat = Category.objects.get(name='Board')
+        return cat.product_set.all()
+
+
+class BoardIndexWithTitle(BoardIndex):
+    def get_context_data(self, **kwargs):
+        context = super(BoardIndex, self).get_context_data(**kwargs)
+        context['title'] = 'Шкафы учета'
+        return context
 
 
 def index(request):
@@ -143,6 +84,8 @@ def product(request, name):
     context = {'name': name}
     return render(request, 'app/product.html', context)
 
+
+# parser for 'saiman.kz'
 
 from . import data_collector
 

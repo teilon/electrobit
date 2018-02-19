@@ -1,0 +1,60 @@
+{% extends 'app/home.html' %}
+{% load staticfiles %}
+
+{% block products %}
+
+    <div class="container-fluid p-0 mb-5">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-terget="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-terget="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-terget="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="{% static 'app/images/caro/00.jpg' %}" alt="" class="d-block img-fluid w-100">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'app/images/caro/01.jpg' %}" alt="" class="d-block img-fluid w-100">
+				</div>
+				<div class="carousel-item">
+					<img src="{% static 'app/images/caro/02.jpg' %}" alt="" class="d-block img-fluid w-100">
+				</div>
+			</div>
+			<a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden='true'></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a href="#carouselExampleIndicators" class="carousel-control-next" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden='true'></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+    <div class="item-cards-grid _main-page">
+        <h2 class="item-cards-grid__header">Популярные товары</h2>
+        <div class="item-cards-slick__cards slider autoplay">
+            {% for item in list %}
+            <div class="item-card slick-slide">
+                    <a href="{% url 'product' name=item.name %}" class="item-card__image-wrapper ddl_product_link">
+                        {% with item.image as image_static %}
+                            <img alt="{{ image_static }}" src="{% static image_static %}" width="150" height="170">
+                        {% endwith %}
+                    </a>
+                    <div class="item-card__info">
+                        <a href="{% url 'product' name=item.name %}" class="item-card__name">{{ item.name }}</a>
+
+                        <div class="item-card__prices">
+                            <div class="item-card__debet">
+                                <span class="item-card__prices-title">Цена</span>
+                                <span class="item-card__prices-price">{{ item.price }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

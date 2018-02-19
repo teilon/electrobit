@@ -7,4 +7,4 @@ app/migrations/__pycache__
 electrbit/app/sub_app/__pycache__
 
 app/static/app/images/product
-app/sub_app/__pycache__
+app/sub_app/__pycache__/*.pyc

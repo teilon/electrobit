@@ -1,0 +1,42 @@
+{% extends 'app/home.html' %}
+{% load staticfiles %}
+
+{% block products %}
+
+    <div class="item-cards-grid _main-page">
+        <h2 class="item-cards-grid__header">{{ title }}</h2>
+        <div class="item-cards-grid__cards">
+
+            {% for product in list%}
+            <div class="item-card ddl_product">
+                <a href="{% url 'product' name=product.name %}" class="item-card__image-wrapper ddl_product_link">
+                    {% with product.image as image_static %}
+                        <img alt="{{ image_static }}" src="{% static image_static %}" width="150" height="170">
+                    {% endwith %}
+                </a>
+                <div class="item-card__info">
+                    <a href="{% url 'product' name=product.name %}" class="item-card__name">{{ product.name }}</a>
+                    <div class="item-card__rating">
+                        <!--<span class="rating _small _10"></span>-->
+                        <!--<a href="{% url 'product' name=product.name %}" class="ddl_product_link" >{{ product.description_short }}</a>-->
+                    </div>
+
+                    <div class="item-card__prices">
+                        <div class="item-card__debet">
+                            <span class="item-card__prices-title">Цена</span>
+                            <span class="item-card__prices-price">{{ product.price }}</span>
+                        </div>
+                        <div class="item-card__instalment">
+                            <span class="item-card__prices-title">Оптовая цена</span>
+                            <span class="item-card__prices-price">{{ product.price_opt }}</span>
+                            <span class="item-card__add-info">x 24</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
