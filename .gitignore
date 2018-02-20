@@ -3,9 +3,7 @@
 **/__pycache__
 **/*.pyc
 
-app/static/app/images/product
-app/static/app/images/*
-
+app/static/app/images/product/*
 
 app/static/app/images/!auth.png!
 app/static/app/images/!logo.png!
