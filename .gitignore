@@ -1,10 +1,11 @@
-*.pyc
 .idea
 
-electrobit/__pycache__
-app/__pycache__
-app/migrations/__pycache__
-electrbit/app/sub_app/__pycache__
+**/__pycache__
+**/*.pyc
 
 app/static/app/images/product
-app/sub_app/__pycache__
+app/static/app/images/*
+
+
+app/static/app/images/!auth.png!
+app/static/app/images/!logo1.png!
