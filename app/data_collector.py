@@ -16,8 +16,8 @@ def start_collect():
     parser = saiman_parse
     if parser.runnable:
         data = parser.start_parse()
-        for target in data:
-            collect(target)
+        # for target in data:
+        #     collect(target)
 
 
 def collect(data):

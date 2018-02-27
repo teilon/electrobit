@@ -9,7 +9,7 @@
 
             {% for product in list%}
             <div class="item-card ddl_product">
-                <a href="{% url 'product' name=product.name %}" class="item-card__image-wrapper ddl_product_link">
+                <a href="{% url 'product_item' pk=product.pk %}" class="item-card__image-wrapper ddl_product_link">
                     {% with product.image as image_static %}
                         <img alt="{{ image_static }}" src="{% static image_static %}" width="150" height="170">
                     {% endwith %}

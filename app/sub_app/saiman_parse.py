@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 
 runnable = True
+depth = True
 
 
 class SaimanSource:
@@ -113,6 +114,7 @@ def parse(url):
     output = []
     for prd in products:
         # http://saiman.kz/i/Products/13_pp.png
+
         host = 'http://saiman.kz'
         img_source = host + '{}'.format(prd.find('img')['src'])
         name_tag = prd.find('h4')
@@ -122,9 +124,9 @@ def parse(url):
             name = 'it is not known'
         description_tag = prd.find('p')
         if description_tag is not None:
-            description = description_tag.contents[0]
+            description_short = description_tag.contents[0]
         else:
-            description = 'it is not known'
+            description_short = 'it is not known'
         cost_tag = prd.find('span', class_='cost')
         if cost_tag is not None:
             cost = cost_tag.contents[0]
@@ -134,14 +136,28 @@ def parse(url):
         data = {
             'img_source': img_source,
             'name': name,
-            'description': description,
+            'description_short': description_short,
             'cost': cost
         }
+        inner_url = prd['href']
+        inner_data = get_inner_data(inner_url)
+        data.update(inner_data)
 
         n += 1
         output.append(data)
 
     print('end of parse sheet')
+    return output
+
+
+def get_inner_data(url):
+    html = get_sleeply_html(url)
+    soup = BeautifulSoup(html, 'lxml')
+    description = soup.find('div', class_='content').find('p')
+
+    output = {
+        'description': description
+    }
     return output
 
 

@@ -33,6 +33,11 @@ class CounterIndexWithTitle(CounterIndex):
         return context
 
 
+class CounterItem(generic.DetailView):
+    template_name = 'app/product.html'
+    model = Product
+
+
 class TransformatorIndex(generic.ListView):
     template_name = 'app/home_view.html'
     context_object_name = 'list'

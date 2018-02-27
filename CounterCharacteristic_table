@@ -1,0 +1,166 @@
+CounterCharacteristic
+
+options = [
+    {
+        'name': 'accuracy_by_active_energy',
+        'value': '',
+        'lang_code': 'cc001'
+    },
+    {
+        'name': 'accuracy_by_reactive_energy',
+        'value': '',
+        'lang_code': 'cc002'
+    },
+    {
+        'name': 'voltage',
+        'value': '',
+        'lang_code': 'cc003'
+    },
+    {
+        'name': 'electricity',
+        'value': '',
+        'lang_code': 'cc004'
+    },
+    {
+        'name': 'range_of_voltage',
+        'value': '',
+        'lang_code': 'cc005'
+    },
+    {
+        'name': 'frequency',
+        'value': '',
+        'lang_code': 'cc006'
+    },
+    {
+        'name': 'sensitivity_of_elevtricity_by_active_energy',
+        'value': '',
+        'lang_code': 'cc007'
+    },
+    {
+        'name': 'sensitivity_of_elevtricity_by_reactive_energy',
+        'value': '',
+        'lang_code': 'cc008'
+    },
+    {
+        'name': 'power_by_voltage_chain',
+        'value': '',
+        'lang_code': 'cc009'
+    },
+    {
+        'name': 'range_of_temperature',
+        'value': '',
+        'lang_code': 'cc010'
+    },
+    {
+        'name': 'constant_of_counter_by_active_energy',
+        'value': '',
+        'lang_code': 'cc011'
+    },
+    {
+        'name': 'constant_of_counter_by_reactive_energy',
+        'value': '',
+        'lang_code': 'cc012'
+    },
+    {
+        'name': 'communication_speed',
+        'value': '',
+        'lang_code': 'cc013'
+    },
+    {
+        'name': 'energy_data_storage_by_quarter_of_hour',
+        'value': '',
+        'lang_code': 'cc014'
+    },
+    {
+        'name': 'energy_data_storage_by_day',
+        'value': '',
+        'lang_code': 'cc015'
+    },
+    {
+        'name': 'energy_data_storage_of_sum_by_day',
+        'value': '',
+        'lang_code': 'cc016'
+    },
+    {
+        'name': 'energy_data_storage_by_month',
+        'value': '',
+        'lang_code': 'cc017'
+    },
+    {
+        'name': 'power_data_storage_by_day',
+        'value': '',
+        'lang_code': 'cc018'
+    },
+    {
+        'name': 'power_data_storage_by_month',
+        'value': '',
+        'lang_code': 'cc019'
+    },
+    {
+        'name': 'case_protection',
+        'value': '',
+        'lang_code': 'cc020'
+    },
+    {
+        'name': 'dimensions',
+        'value': '',
+        'lang_code': 'cc021'
+    },
+    {
+        'name': 'installation_dimensions',
+        'value': '',
+        'lang_code': 'cc022'
+    },
+    {
+        'name': 'weight',
+        'value': '',
+        'lang_code': 'cc023'
+    },
+    {
+        'name': 'calibration_interval',
+        'value': '',
+        'lang_code': 'cc024'
+    },
+    {
+        'name': 'life_time',
+        'value': '',
+        'lang_code': 'cc025'
+    },
+    {
+        'name': 'guarantee_period',
+        'value': '',
+        'lang_code': 'cc026'
+    },
+    {
+        'name': 'interface_rs485',
+        'value': '',
+        'lang_code': 'cc027'
+    },
+    
+    {
+        'name': 'constant_of_counter',
+        'value': '',
+        'lang_code': 'cc028'
+    },
+    {
+        'name': 'sensitivity_of_elevtricity',
+        'value': '',
+        'lang_code': 'cc029'
+    },
+    {
+        'name': 'accuracy',
+        'value': '',
+        'lang_code': 'cc030'
+    },
+    {
+        'name': 'power_by_electricity_chain',
+        'value': '',
+        'lang_code': 'cc031'
+    },
+    {
+        'name': '',
+        'value': '',
+        'lang_code': ''
+    }
+]
+
