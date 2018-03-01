@@ -5,28 +5,25 @@
 
 
 
-    <header class="header">
+    <header class="header header-info">
         <div class="header__inner">
             <form name="search" class="search _topbar-ext" action="#" method="get">
-                <input type="hidden" id="emptySearch" name="emptySearch" value="rO0ABXQAI2h0dHBzOi8va2FzcGkua3ovc2hvcC9jL0NhdGVnb3JpZXMv">
+                <input type="hidden" id="emptySearch" name="emptySearch" value="">
+
                 <a href="#" class="search__logo">Магазин</a>
+
                 <span class="twitter-typeahead" style="position: relative; display: inline-block;">
-                    <input class="search__input tt-hint" type="text" value="" data-no-validation="data-no-validation" maxlength="256" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(251, 251, 251);">
                     <input class="search__input tt-input" type="text" placeholder="Поиск товара" name="text" value="" data-no-validation="data-no-validation" maxlength="256" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
                 </span>
+
                 <button class="search__submit button" type="submit">
                     <span class="icon _small _search"></span>
                 </button>
             </form>
 
-            <!--<a href="" id="citySelector" class="current-location ">-->
-                <!--Мой город<br>-->
-                <!--<span class="current-location__city">Алматы</span>-->
-            <!--</a>-->
             <div>
                 <span>тел.</span>
             </div>
-
 
             <div class="phone">
                 <span class="phone__icon icon _small _mobile-toggle"></span>
@@ -36,42 +33,44 @@
         </div>
     </header>
 
-    <nav class="nav">
-		<div class="nav__inner">
-			<ul class="nav__list">
-                <li class="nav__el">
-                    <a class="nav__el-link" href="{% url 'counter' %}">
-                        <span class="nav__el-link-text">Счетчики</span>
-                    </a>
-                </li>
-                <li class="nav__el">
-                    <a class="nav__el-link" href="{% url 'transformator' %}">
-                        <span class="nav__el-link-text"><center>Трансформаторы<br>тока</center></span>
-                    </a>
-                </li>
-                <li class="nav__el">
-                    <a class="nav__el-link" href="{% url 'board' %}">
-                        <span class="nav__el-link-text"><center>Шкафы<br>учета</center></span>
-                    </a>
-                </li>
-                <li class="nav__el">
-                    <a class="nav__el-link" href="#">
-                        <span class="nav__el-link-text"><center>Низковольтная<br>аппаратура</center></span>
-                    </a>
-                </li>
-                <li class="nav__el">
-                    <a class="nav__el-link" href="#">
-                        <span class="nav__el-link-text"><center>Осветительные<br>приборы</center></span>
-                    </a>
-                </li>
-                <li class="nav__el">
-                    <a class="nav__el-link" href="#">
-                        <span class="nav__el-link-text"><center>Кабельно-проводниковая<br>продукция</center></span>
-                    </a>
-                </li>
-            </ul>
-		</div>
-	</nav>
+    <header class="header-menu">
+        <nav class="nav">
+            <div class="nav__inner">
+                <ul class="nav__list">
+                    <li class="nav__el">
+                        <a class="nav__el-link" href="{% url 'counter' %}">
+                            <span class="nav__el-link-text">Счетчики</span>
+                        </a>
+                    </li>
+                    <li class="nav__el">
+                        <a class="nav__el-link" href="{% url 'transformator' %}">
+                            <span class="nav__el-link-text"><center>Трансформаторы<br>тока</center></span>
+                        </a>
+                    </li>
+                    <li class="nav__el">
+                        <a class="nav__el-link" href="{% url 'board' %}">
+                            <span class="nav__el-link-text"><center>Шкафы<br>учета</center></span>
+                        </a>
+                    </li>
+                    <li class="nav__el">
+                        <a class="nav__el-link" href="#">
+                            <span class="nav__el-link-text"><center>Низковольтная<br>аппаратура</center></span>
+                        </a>
+                    </li>
+                    <li class="nav__el">
+                        <a class="nav__el-link" href="#">
+                            <span class="nav__el-link-text"><center>Осветительные<br>приборы</center></span>
+                        </a>
+                    </li>
+                    <li class="nav__el">
+                        <a class="nav__el-link" href="#">
+                            <span class="nav__el-link-text"><center>Кабельно-проводниковая<br>продукция</center></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
 
 

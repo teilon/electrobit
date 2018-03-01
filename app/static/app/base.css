@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: normal;
+    cursor: default;
+}
+body, html {
+    min-width: 960px;
+}
+body, figure {
+    margin: 0;
+}
+button, input, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: 100%;
+}
+button, input {
+    vertical-align: baseline;
+    line-height: normal;
+}
+button, select {
+    text-transform: none;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+/*
+------------------------- header-top
+*/
+.header_top{
+    background:#4a4a4a;
+    line-height: 2.5;
+}
+.header_inner{
+    width:960px;
+    height:74px;
+    margin:0 auto;
+    padding:0;
+}
+.header_menu a{
+    color:#f2f2f2;
+}
+.navbar-custom .navbar-nav>.nav-item.active>.nav-link,
+.navbar-custom .navbar-nav>.nav-item .nav-link:focus,
+.navbar-custom .navbar-nav>.nav-item .nav-link:hover{
+    color:#f14635;
+}
+.header_menu{
+    margin:0;
+    padding:0;
+    list-style:none;
+    color:#f2f2f2;
+    position:relative;
+    font-size: 17px;
+}
+/*
+----------------------------- header-info
+*/
+* {box-sizing: border-box;}
+.header-info {
+    width:960px;
+    height:74px;
+    margin:0 auto;
+    padding:0;
+}
+.header__inner{
+    padding: 14px 0;
+    position: relative;
+}
+form{
+    display: block;
+    margin-top: 0em;
+}
+.search{
+    float: left;
+    padding-top: 5px;
+    margin-right: 28px;
+}
+a.search__logo{
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  vertical-align: middle;
+  line-height: 32px;
+  text-align: center;
+  color: #0089d0;
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+  font-weight: 500;
+  background: #f5f5f5;
+}
+.search .twitter-typeahead{
+    vertical-align: middle;
+}
+input[type=text]{
+-webkit-appearance: none;
+    width: 100%;
+    -moz-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+    height: 35px;
+    max-width: 100%;
+    padding: 0 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: none;
+    }
+input.search__input {
+  -webkit-appearance: none;
+  display: inline-block;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  height: 35px;
+  max-width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: none;
+  width: 490px;
+  padding-left: 20px;
+  margin-left: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.button{
+    height: 35px;
+    padding: 7px 21px;
+    font-size: 14px;
+    line-height: 21px;
+
+    vertical-align: middle;
+    display: inline-block;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background: #0089d0;
+    box-shadow: inset 0 -2px #006396;
+    white-space: nowrap;
+    text-decoration: none!important;
+    cursor: pointer;
+    transition: .01s;
+}
+.search__submit{
+    margin-bottom: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-left: -3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    }
+
+button:before {
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+/*
+----------------------------- carousel-of-banners
+*/
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+	height: 50px;
+	width: 50px;
+}
+/**/
+.phone__number {
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 95%;
+    height: 20px;
+}
+app.css:3
+.credit-choice-good__tab, .credit-more__col-head, .credit-pay__message, .credit-register__message, .credit-step__tab, .faq__heading, .item-desc__inner .credit-pay__message, .item-desc__inner .credit-register__message, .item-desc__inner .item__heading, .item-desc__inner h3, .item__heading, .overdue-hero__counts-math, div, h1, h2, h3, h4, h5, h6, label, p, span {
+    background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+}
+app.css:1
+*, :after, :before {
+    box-sizing: inherit;
+}
+/*
+------------------------------ product-body
+*/
+h2.item-cards-grid__header{
+    margin:25px 0 25px;
+}
+
+
