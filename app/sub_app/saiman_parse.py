@@ -50,7 +50,6 @@ def start_parse():
 
     for target in saiman.source:
 
-        # target = saiman.counters
         company = target['company']
         category = target['category']
         url_items = target['url_items']
@@ -103,7 +102,7 @@ def get_sheets(url):
 
 
 def parse(url):
-    print('start parse sheet')
+    print('parse inner sheet [{}]'.format(url))
 
     html = get_sleeply_html(url)
     soup = BeautifulSoup(html, 'lxml')
@@ -151,9 +150,12 @@ def parse(url):
 
 
 def get_inner_data(url):
+    url = '{}{}'.format(SaimanSource().host, url)
+    print('start parse sheet [{}]'.format(url))
+
     html = get_sleeply_html(url)
     soup = BeautifulSoup(html, 'lxml')
-    description = soup.find('div', class_='content').find('p')
+    description = soup.find('div', class_='content').find('p').text
 
     output = {
         'description': description

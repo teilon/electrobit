@@ -16,8 +16,8 @@ def start_collect():
     parser = saiman_parse
     if parser.runnable:
         data = parser.start_parse()
-        # for target in data:
-        #     collect(target)
+        for target in data:
+            collect(target)
 
 
 def collect(data):
@@ -60,14 +60,20 @@ def get_category_object(category_name):
     return Category.objects.get(name=category_name)
 
 
+import os
+
+
 def save_image(url):
     image_name = 'app/images/product/{}'.format(get_name())
+
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    saveplace = '{}/app/static/{}'.format(BASE_DIR, image_name)
 
     response = requests.get(url, stream=True)
     response.raw.decode_content = True
 
     img = Image.open(response.raw)
-    img.save(image_name, "PNG")
+    img.save(saveplace, "PNG")
 
     return image_name
 

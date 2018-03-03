@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -60,4 +60,235 @@ h2.item-cards-grid__header{
     margin:25px 0 25px;
 }
 
+/*
+    product
+*/
+.product{
+    margin-top: 10px;
+}
+.product-info-main{
+    border-right: 1px solid #ddd; /* Параметры линии */
+    margin-right: 5px; /* Отступ слева */
+    padding-right: 10px; /* Расстояние от линии до текста */
+}
+.page-title,
+.item-meta b{
+    font-family: 'Open Sans', sans-serif;
+}
+.page-title .title-2 {
+    margin-bottom: 0;
+}
+.title-2 {
+    font-size: 25px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    color: #000;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
+.item-block{
+    margin: 24px auto;
+    padding: 10px auto;
+}
+.product .item-meta b {
+    color: #2ba81e;
+    margin-left: 5px;
+}
+.product .item-meta b,
+.product .item-meta label {
+    font-weight: 500;
+}
+.product label{
+    margin: auto;
+}
+.product .item-meta>div {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.item-oldprice{
+    text-decoration:line-through;
+    font-size:14px
+}
+.item-price{
+    margin-bottom: 20px;
+    padding: auto;
+}
+.item-price--large .item-price .price,
+.item-price--large .item-price strong {
+    font-size: 54px;
+    height: 35px;
+    line-height: 35px;
+}
+.img-centered{
+    vertical-align:middle;
+}
+.item-order{
+    margin-top: 24px;
+}
+
+
+.btn--green {
+    color: #fff!important;
+    background-color: #2ba81e!important;
+}
+.btn--blue{
+    color: #fff!important;
+    background-color: #0089d0!important;
+}
+.btn--block:hover{
+    background-color: #2ba81e!important;
+}
+.btn--largest {
+    font-size: 18px;
+    padding-top: 9.5px;
+    padding-bottom: 9.5px;
+}
+.btn--block {
+    display: block;
+    width: 100%;
+}
+
+/* nav bottom */
+
+.product-menu-bottom .item-cards-grid{
+    margin-bottom: 0px;
+}
+
+.nav-product-wrapper {
+    height: 45px;
+}
+.nav-product-wrapper {
+    position: relative;
+    padding-top: 0;
+    -webkit-transition: padding-top .3s;
+    transition: padding-top .3s;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.nav-product-wrapper:not(.fixed) .nav-product {
+    padding-right: 0!important;
+}
+.nav-product {
+    -webkit-transition: top .3s;
+    transition: top .3s;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1156px;
+    z-index: 7;
+}
+.nav-product, .nav-product-wrapper {
+    height: 45px;
+}
+
+
+
+.container {
+    width: auto;
+    max-width: 1176px;
+}
+@media (min-width: 1200px)
+.container {
+    width: 1176px;
+}
+@media (min-width: 1024px)
+.container {
+    width: 960px;
+}
+@media (min-width: 768px)
+.container {
+    width: 740px;
+}
+
+
+.container {
+    width: 960px;
+    max-width: 100%;
+    margin-bottom: 28px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.nav-product-in ul {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    font-size: 0;
+}
+
+.list-inline {
+    margin-left: -5px;
+}
+.list-inline, .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.product-bottom{
+    background-color: #eee;
+}
+.product-menu-bottom li {
+    padding: 0;
+    font-size: 16px;
+}
+.product-menu-bottom li a:focus,
+.product-menu-bottom li a:hover{
+    border-bottom-color: #0089d0;
+    color: #0089d0;
+}
+.product-menu-bottom li.active{
+    border-bottom: 5px solid #0089d0;
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 15px;
+}
+
+/* tabs */
+
+.product-tab.bg--white {
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+.product-tab {
+    position: relative;
+    padding-top: 30px;
+}
+
+.container {
+    width: auto;
+    max-width: 1176px;
+}
+
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
+}

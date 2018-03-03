@@ -3,17 +3,13 @@
 
 {% block products %}
 
-
-
-<div class="product">
-    <div class="product-columns clearfix">
-        <form action="" method="post" id="product_addtocart_form" novalidate="novalidate">
-            <div class="column column-view">
-
+    <div class="product item-cards-grid">
+        <div class="product-coumns row">
+            <div class="col-8 column column-view">
                 <div class="product-info-main">
                     <div class="page-title-wrapper item-title">
                         <h1 class="page-title">
-                            <span class="title-2" data-ui-id="page-title-wrapper">{{ object.name }}</span>
+                            <span class="title-2" data-ui-id="page-title-wrapper"><strong>{{ object.name }}</strong></span>
                         </h1>
                     </div>
 
@@ -21,8 +17,12 @@
                         <div class="stock available" title="Доступность">
                             <label>Cтатус:</label><b class="stock-status">Есть в наличии</b>
                         </div>
+                        <div class="product-info-stock-sku">
+                            <div class="attribute sku">
+                                <label class="type">Код товара: </label><b class="value">{{ object.article }}</b>
+                            </div>
+                        </div>
                     </div>
-
                     <div class="product-gallery">
                         <div class="img-centered ">
                             {% with object.image as image_static %}
@@ -32,16 +32,17 @@
                     </div>
                 </div>
             </div>
-            <div class="column column-side">
+
+            <div class="col-4 column column-side">
                 <div class="item-order">
                     <div class="item-block">
                         <div class="item-oldprice item-oldprice--large text-through text--orange">
-                            {{ object.price }}
+                            {{ object.old_price }}
                         </div>
                         <div class="item-price item-price--large pricebox-product-view">
                             <div class="price-box price-final_price" data-role="priceBox" data-product-id="4976">
                                 <span class="item-price price-container price-final_price tax weee">
-                                    <span class="price">{{ object.price }}</span>
+                                    <span class="price">{{ object.price }}</span>тг.
                                     <meta content="KZT">
                                 </span>
                             </div>
@@ -51,13 +52,133 @@
                         {{ object.description }}
                     </div>
                     <div class="item-block">
-                        <button type="button" class="btn btn--green btn--block btn--largest js-all-char">Все характеристики</button>
+                        <button type="button" class="btn btn--blue btn--block btn--largest js-all-char">Все характеристики</button>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
-</div>
+
+    <div class="product-bottom">
+
+        <!--<div class="product-menu-bottom">-->
+            <!--<div class="item-cards-grid">-->
+                <!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+                    <!--<nav class="navbar navbar-custom sticky-top">-->
+                        <!--<div class="row">-->
+                            <!--<ul class="nav-tabs list-inline" data-tabsetid="5915">-->
+                                <!--<li class="nav-item active" data-alias="product_info_overview" aria-controls="product_info_overview" role="presentation">-->
+                                    <!--<a class="nav-link" href="#product_info_overview" role="tab" data-toggle="tab">Обзор</a>-->
+                                <!--</li>-->
+                                <!--<li class="nav-item" data-alias="product_tab_description" aria-controls="product_tab_description" role="presentation">-->
+                                    <!--<a class="nav-link" href="#product_tab_description" role="tab" data-toggle="tab">Описание</a>-->
+                                <!--</li>-->
+                                <!--<li class="nav-item" data-alias="product_tab_attributes" aria-controls="product_tab_attributes" role="presentation">-->
+                                    <!--<a class="nav-link" href="#product_tab_attributes" role="tab" data-toggle="tab">Характеристики</a>-->
+                                <!--</li>-->
+                                <!--<li class="nav-item" data-alias="reviews" aria-controls="reviews" role="presentation">-->
+                                    <!--<a class="nav-link" href="#reviews" role="tab" data-toggle="tab">Отзывы</a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</nav>-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="product-tabs">-->
+            <!--<div class="product-tab bg&#45;&#45;white">-->
+                <!--<div class="container tab-content" data-tabsetid="5915">-->
+
+                    <!--<div role="tabpanel" class="tab-pane fade in active" id="product_info_overview">-->
+                        <!--<p><b>обзор</b></p>-->
+                    <!--</div>-->
+
+                    <!--<div role="tabpanel" class="tab-pane fade" id="product_tab_description">-->
+                        <!--<p><b>описание</b></p>-->
+                    <!--</div>-->
+
+                    <!--<div role="tabpanel" class="tab-pane fade" id="product_tab_attributes">-->
+                        <!--<p><b>характеристики</b></p>-->
+                    <!--</div>-->
+
+                    <!--<div role="tabpanel" class="tab-pane fade" id="reviews">-->
+                        <!--<p><b>отзывы</b></p>-->
+                    <!--</div>-->
+
+
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="col-sm-8">
+            <div class="tabbable">
+                <ul class="nav nav-tabs" data-tabsetid="5915">
+                    <li class="active">
+                        <a href="#tab-5915-1" data-toggle="tab" data-value="Plot">Plot</a>
+                    </li>
+                    <li>
+                        <a href="#tab-5915-2" data-toggle="tab" data-value="Summary">Summary</a>
+                    </li>
+                    <li>
+                        <a href="#tab-5915-3" data-toggle="tab" data-value="Table">Table</a>
+                    </li>
+                </ul>
+                <div class="tab-content" data-tabsetid="5915">
+                    <div class="tab-pane active" data-value="Plot" id="tab-5915-1">
+                        <div id="plot" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                        <p><b>обзор</b></p>
+                    </div>
+                    <div class="tab-pane" data-value="Summary" id="tab-5915-2">
+                        <pre id="summary" class="shiny-text-output noplaceholder"></pre>
+                        <p><b>описание</b></p>
+                    </div>
+                    <div class="tab-pane" data-value="Table" id="tab-5915-3">
+                        <div id="table" class="shiny-html-output"></div>
+                        <p><b>характеристики</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--<div class="product&#45;&#45;bottom">-->
+        <!--<div class="nav-product-wrapper">-->
+            <!--<div class="nav-product" style="left: 0px;">-->
+                <!--<div class="container">-->
+                    <!--<div class="nav-product-in">-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-xs-12">-->
+                                <!--<ul class="list-inline" role="tablist">-->
+                                    <!--<li class="active" data-alias="product_info_overview" aria-controls="product_info_overview" role="presentation">-->
+                                        <!--<a href="#" role="tab" data-toggle="tab">Обзор</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="" data-alias="product_tab_description" aria-controls="product_tab_description" role="presentation">-->
+                                        <!--<a href="#" role="tab" data-toggle="tab">Описание</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="" data-alias="product_tab_attributes" aria-controls="product_tab_attributes" role="presentation">-->
+                                        <!--<a href="#" role="tab" data-toggle="tab">Характеристики</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="" data-alias="reviews" aria-controls="reviews" role="presentation">-->
+                                        <!--<a href="#" role="tab" data-toggle="tab">Отзывы</a>-->
+                                    <!--</li>-->
+                                    <!--<li class="" data-alias="product_tab_shops" aria-controls="product_tab_shops" role="presentation">-->
+                                        <!--<a href="#" role="tab" data-toggle="tab">-->
+                                            <!--<i class="icon icon-pin icon&#45;&#45;green"></i> Наличие в магазинах</a>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
 
 
 
