@@ -3,80 +3,128 @@
 
 {% block content %}
 
+    <div class="header_wrapper">
+        <header class="header_top">
+            <div class="header_inner">
+                <nav class='navbar navbar-expand-lg navbar-dark navbar-custom sticky-top'>
 
+                    <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportContent" aria-controls="navbarSupportContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-text">Electro BIT</span>
+                    </button>
 
-    <header class="header header-info">
-        <div class="header__inner">
-            <form name="search" class="search _topbar-ext" action="#" method="get">
-                <input type="hidden" id="emptySearch" name="emptySearch" value="">
+                    <div class="header_logo">
+                        <a href="#" class="navbar-brand">
+                            <!--<img src="{% static 'app/images/logo1.png' %}" width="250" height="50" alt="logo">-->
+                            <img src="{% static 'app/images/logo.png' %}" width="30" height="30" alt="logo">
+                        </a>
 
-                <a href="#" class="search__logo">Магазин</a>
+                    </div>
 
-                <span class="twitter-typeahead" style="position: relative; display: inline-block;">
-                    <input class="search__input tt-input" type="text" placeholder="Поиск товара" name="text" value="" data-no-validation="data-no-validation" maxlength="256" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
-                </span>
+                    <div class="collapse navbar-collapse" id="navbarSupportContent">
+                        <ul class="navbar-nav mr-auto header_menu">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'home' %}">Магазин</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Платежи</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">О Нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                        <div class="header_auth">
+                            <a href="#">
+                                <img src="{% static 'app/images/auth.png' %}" width="30" height="30" alt="logo">
+                            </a>
+                        </div>
+                    </div>
 
-                <button class="search__submit button" type="submit">
-                    <span class="icon _small _search"></span>
-                </button>
-            </form>
-
-            <div>
-                <span>тел.</span>
+                </nav>
             </div>
+        </header>
 
-            <div class="phone">
-                <span class="phone__icon icon _small _mobile-toggle"></span>
-                <span class="phone__number">8 (777)123 45 67</span>
-                <!--<span class="phone__hint">(бесплатно)</span>-->
+        <header class="header header-info ">
+            <div class="header__inner">
+                <form name="search" class="search _topbar-ext" action="#" method="get">
+                    <input type="hidden" id="emptySearch" name="emptySearch" value="">
+
+                    <a href="#" class="search__logo">Магазин</a>
+
+                    <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+                        <input class="search__input tt-input" type="text" placeholder="Поиск товара" name="text" value="" data-no-validation="data-no-validation" maxlength="256" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
+                    </span>
+
+                    <button class="search__submit button" type="submit">
+                        <span class="icon _small _search"></span>
+                    </button>
+                </form>
+
+                <div>
+                    <span>тел.</span>
+                </div>
+
+                <div class="phone">
+                    <span class="phone__icon icon _small _mobile-toggle"></span>
+                    <span class="phone__number">8 (777)123 45 67</span>
+                    <!--<span class="phone__hint">(бесплатно)</span>-->
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <header class="header-menu">
-        <nav class="nav menu-fixed fixed">
-            <div class="nav__inner">
-                <ul class="nav__list">
-                    <li class="nav__el">
-                        <a class="nav__el-link" href="{% url 'counter' %}">
-                            <span class="nav__el-link-text">Счетчики</span>
-                        </a>
-                    </li>
-                    <li class="nav__el">
-                        <a class="nav__el-link" href="{% url 'transformator' %}">
-                            <span class="nav__el-link-text"><center>Трансформаторы<br>тока</center></span>
-                        </a>
-                    </li>
-                    <li class="nav__el">
-                        <a class="nav__el-link" href="{% url 'board' %}">
-                            <span class="nav__el-link-text"><center>Шкафы<br>учета</center></span>
-                        </a>
-                    </li>
-                    <li class="nav__el">
-                        <a class="nav__el-link" href="#">
-                            <span class="nav__el-link-text"><center>Низковольтная<br>аппаратура</center></span>
-                        </a>
-                    </li>
-                    <li class="nav__el">
-                        <a class="nav__el-link" href="#">
-                            <span class="nav__el-link-text"><center>Осветительные<br>приборы</center></span>
-                        </a>
-                    </li>
-                    <li class="nav__el">
-                        <a class="nav__el-link" href="#">
-                            <span class="nav__el-link-text"><center>Кабельно-проводниковая<br>продукция</center></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-
+        <header class="header-menu" id="header-menu-id">
+            <nav class="nav menu-fixed product-menu">
+                <div class="nav__inner">
+                    <ul class="nav__list">
+                        <li class="nav__el">
+                            <a class="nav__el-link" href="{% url 'counter' %}">
+                                <span class="nav__el-link-text">Счетчики</span>
+                            </a>
+                        </li>
+                        <li class="nav__el">
+                            <a class="nav__el-link" href="{% url 'transformator' %}">
+                                <span class="nav__el-link-text"><center>Трансформаторы<br>тока</center></span>
+                            </a>
+                        </li>
+                        <li class="nav__el">
+                            <a class="nav__el-link" href="{% url 'board' %}">
+                                <span class="nav__el-link-text"><center>Шкафы<br>учета</center></span>
+                            </a>
+                        </li>
+                        <li class="nav__el">
+                            <a class="nav__el-link" href="#">
+                                <span class="nav__el-link-text"><center>Низковольтная<br>аппаратура</center></span>
+                            </a>
+                        </li>
+                        <li class="nav__el">
+                            <a class="nav__el-link" href="#">
+                                <span class="nav__el-link-text"><center>Осветительные<br>приборы</center></span>
+                            </a>
+                        </li>
+                        <li class="nav__el">
+                            <a class="nav__el-link" href="#">
+                                <span class="nav__el-link-text"><center>Кабельно-проводниковая<br>продукция</center></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
 
 
-    {% block products %}
-    {% endblock %}
+
+
+
+    <div class="data-wrapper" id="content-id">
+        {% block products %}
+        {% endblock %}
+    </div>
 
 
 

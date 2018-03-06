@@ -246,18 +246,27 @@ h2.item-cards-grid__header{
     display: block;
 }
 
-/* menu-fixed */
-.menu-fixed{
+/*
+    menu-fixed
+
+.header-menu{width:100%;}
+.header-menu-padding {padding-top:40px;}
+.data-wrapper{padding: 0px;}
+.data-wrapper{margin-top:10px;}
+*/
+
+.is-sticky{
     position:fixed;
-    top:0;
+    top: 0;
+    width: 100%;
+    /*overflow: hidden;*/
+    z-index: 100;
 }
 /*
-.nav .menu-fixed :not(.fixed) {
-    padding-right: 0!important;
+.data-wrapper + .is-sticky {
+    padding-top: 60px;
 }
 */
-.nav .menu-fixed, .nav:before {
-    position: absolute;
-    left: 0;
-    top: 0;
+.content-wrapper {
+    padding-top: 60px;
 }

@@ -11,7 +11,7 @@ def main():
     start_collect()
 
 
-TESTPARSE = True
+TESTPARSE = False
 
 
 def start_test_collect():
