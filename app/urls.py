@@ -5,7 +5,7 @@ urlpatterns = [
     # re_path('^$', views.home, name='home'),
     re_path('^$', views.HomeIndex.as_view(), name='home'),
     re_path('^counters/$', views.CounterIndexWithTitle.as_view(), name='counter'),
-    re_path('^products/(?P<pk>.+)/$', views.CounterItem.as_view(), name='product_item'),
+    re_path('^products/(?P<pk>.+)/$', views.ProductItemWithOther.as_view(), name='product_item'),
 
     re_path('^transformators/$', views.TransformatorIndexWithTitle.as_view(), name='transformator'),
     re_path('^boards/$', views.BoardIndexWithTitle.as_view(), name='board'),

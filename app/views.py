@@ -33,9 +33,19 @@ class CounterIndexWithTitle(CounterIndex):
         return context
 
 
-class CounterItem(generic.DetailView):
+class ProductItem(generic.DetailView):
     template_name = 'app/product.html'
     model = Product
+
+
+class ProductItemWithOther(ProductItem):
+    def get_context_data(self, **kwargs):
+        context = super(ProductItem, self).get_context_data(**kwargs)
+        current_object = context['object']
+        category = Product.objects.get(id=current_object.id).category
+        product_list = Product.objects.all().filter(category=category).order_by('?')[:10]
+        context['list'] = product_list
+        return context
 
 
 class TransformatorIndex(generic.ListView):
@@ -86,7 +96,9 @@ def group(request):
 
 
 def product(request, name):
-    context = {'name': name}
+    list = Product.objects.all().order_by('?')[:10]
+    context = {'name': name,
+               'list': list}
     return render(request, 'app/product.html', context)
 
 

@@ -160,23 +160,7 @@ h2.item-cards-grid__header{
     margin-bottom: 0px;
 }
 
-.nav-product-wrapper {
-    height: 45px;
-}
-.nav-product-wrapper {
-    position: relative;
-    padding-top: 0;
-    -webkit-transition: padding-top .3s;
-    transition: padding-top .3s;
-}
-*, :after, :before {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-
-
-.nav-product-wrapper:not(.fixed) .nav-product {
+.product-menu-bottom:not(.fixed) .nav-product {
     padding-right: 0!important;
 }
 .nav-product {
@@ -195,7 +179,7 @@ h2.item-cards-grid__header{
 }
 
 
-
+/*
 .container {
     width: auto;
     max-width: 1176px;
@@ -212,23 +196,7 @@ h2.item-cards-grid__header{
 .container {
     width: 740px;
 }
-
-
-.container {
-    width: 960px;
-    max-width: 100%;
-    margin-bottom: 28px;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    background: #fff;
-}
-
-.nav-product-in ul {
-    position: relative;
-    z-index: 3;
-    margin: 0;
-    font-size: 0;
-}
+*/
 
 .list-inline {
     margin-left: -5px;
@@ -237,37 +205,24 @@ h2.item-cards-grid__header{
     padding-left: 0;
     list-style: none;
 }
-ol, ul {
-    margin-top: 0;
-    margin-bottom: 18px;
-}
 *, :after, :before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-
-.product-bottom{
+.product-menu-bottom{
     background-color: #eee;
 }
-.product-menu-bottom li {
-    padding: 0;
+.bottom-menu{
     font-size: 16px;
 }
-.product-menu-bottom li a:focus,
-.product-menu-bottom li a:hover{
-    border-bottom-color: #0089d0;
-    color: #0089d0;
+.bottom-menu .nav-item{
+    color: #000;
+    background-color: #eee;
 }
-.product-menu-bottom li.active{
+.bottom-menu .nav-item.active{
     border-bottom: 5px solid #0089d0;
-}
-
-.list-inline>li {
-    display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin-top: 15px;
+    color: #0089d0;
 }
 
 /* tabs */
@@ -280,15 +235,29 @@ ol, ul {
     position: relative;
     padding-top: 30px;
 }
-
 .container {
     width: auto;
     max-width: 1176px;
 }
-
 .tab-pane {
     display: none;
 }
 .tab-pane.active {
     display: block;
+}
+
+/* menu-fixed */
+.menu-fixed{
+    position:fixed;
+    top:0;
+}
+/*
+.nav .menu-fixed :not(.fixed) {
+    padding-right: 0!important;
+}
+*/
+.nav .menu-fixed, .nav:before {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
