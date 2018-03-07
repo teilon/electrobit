@@ -69,7 +69,13 @@ $(document).on('ready', function() {
 
 
 // When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {scrollingPanel()};
+
+function scrollingPanel(){
+    headerMenuScroll();
+    productPreviewScroll();
+    bottomMenuScroll();
+}
 
 // Get the navbar
 var header_menu = document.getElementById("header-menu-id");
@@ -79,7 +85,7 @@ var data_wrapper = document.getElementById("content-id");
 var sticky = header_menu.offsetTop;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
+function headerMenuScroll() {
   if (window.pageYOffset >= sticky) {
     header_menu.classList.add("is-sticky")
     data_wrapper.classList.add("content-wrapper")
@@ -90,34 +96,33 @@ function myFunction() {
 }
 
 
-//+++++++++++++++++++++++++++++
-//+++++++++++++++++++++++++++++
-//+++++++++++++++++++++++++++++
+var product_preview = document.getElementById("product-preview-id");
+var sticky_preview = product_preview.offsetTop - 64;
 
-//// Create a clone of the menu, right next to original.
-//$('.header-menu').addClass('original').clone().insertAfter('.header-menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
-//
-//scrollIntervalID = setInterval(stickIt, 10);
-//
-//
-//function stickIt() {
-//
-//  var orgElementPos = $('.original').offset();
-//  orgElementTop = orgElementPos.top;
-//
-//  if ($(window).scrollTop() >= (orgElementTop)) {
-//    // scrolled past the original position; now only show the cloned, sticky element.
-//
-//    // Cloned element should always have same left position and width as original element.
-//    orgElement = $('.original');
-//    coordsOrgElement = orgElement.offset();
-//    leftOrgElement = coordsOrgElement.left;
-//    widthOrgElement = orgElement.css('width');
-//    $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
-//    $('.original').css('visibility','hidden');
-//  } else {
-//    // not scrolled past the menu; only show the original menu.
-//    $('.cloned').hide();
-//    $('.original').css('visibility','visible');
-//  }
-//}
+function productPreviewScroll(){
+  if (window.pageYOffset >= sticky_preview) {
+    product_preview.classList.remove("hidden");
+    product_preview.classList.add("is-preview-sticky");
+    data_wrapper.classList.add("preview-content-wrapper");
+  } else {
+    product_preview.classList.add("hidden")
+    product_preview.classList.remove("is-preview-sticky");
+    data_wrapper.classList.remove("preview-content-wrapper")
+  }
+}
+
+var bottom_menu = document.getElementById("bottom-menu-id");
+//var data_wrapper = document.getElementById("content-id");
+
+// Get the offset position of the navbar
+var sticky_bottom = bottom_menu.offsetTop - 64;
+
+function bottomMenuScroll(){
+  if (window.pageYOffset >= sticky_bottom) {
+    bottom_menu.classList.add("is-second-sticky")
+    data_wrapper.classList.add("second-content-wrapper")
+  } else {
+    bottom_menu.classList.remove("is-second-sticky");
+    data_wrapper.classList.remove("second-content-wrapper")
+  }
+}

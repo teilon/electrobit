@@ -36,14 +36,14 @@
         <h2 class="item-cards-grid__header">Популярные товары</h2>
         <div class="item-cards-slick__cards slider autoplay">
             {% for item in list %}
-            <div class="item-card slick-slide">
-                    <a href="{% url 'product' name=item.name %}" class="item-card__image-wrapper ddl_product_link">
+            	<div class="item-card slick-slide">
+                    <a href="{% url 'product_item' pk=item.pk %}" class="item-card__image-wrapper ddl_product_link">
                         {% with item.image as image_static %}
                             <img alt="{{ image_static }}" src="{% static image_static %}" width="150" height="170">
                         {% endwith %}
                     </a>
                     <div class="item-card__info">
-                        <a href="{% url 'product' name=item.name %}" class="item-card__name">{{ item.name }}</a>
+                        <a href="{% url 'product_item' pk=item.pk %}" class="item-card__name">{{ item.name }}</a>
 
                         <div class="item-card__prices">
                             <div class="item-card__debet">

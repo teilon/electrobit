@@ -15,10 +15,10 @@
                     {% endwith %}
                 </a>
                 <div class="item-card__info">
-                    <a href="{% url 'product' name=product.name %}" class="item-card__name">{{ product.name }}</a>
+                    <a href="{% url 'product_item' pk=product.pk %}" class="item-card__name">{{ product.name }}</a>
                     <div class="item-card__rating">
                         <!--<span class="rating _small _10"></span>-->
-                        <!--<a href="{% url 'product' name=product.name %}" class="ddl_product_link" >{{ product.description_short }}</a>-->
+                        <!--<a href="{% url 'product_item' pk=product.pk %}" class="ddl_product_link" >{{ product.description_short }}</a>-->
                     </div>
 
                     <div class="item-card__prices">

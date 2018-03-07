@@ -3,6 +3,63 @@
 
 {% block products %}
 
+    <div class="hidden-title">
+        <div class="hidden-title hidden" id="product-preview-id">
+            <div class="product-preview">
+                <div class="item-columns clearfix">
+                    <div class="column column-left">
+
+                        <div class="column-img">
+                            <div class="img-centered">
+                                {% with object.image as image_static %}
+                                    <img src="{% static image_static %}" alt="alt text" class="img-fluid " width="55" height="60">
+                                {% endwith %}
+                            </div>
+                        </div>
+                        <div class="column-in">
+                            <div class="item-title text--black text-ellipsis">{{ object.name }}
+                            </div>
+                            <div class="item-meta">
+                                <div>
+                                    <label>Статус:</label><b class="stock-status">Есть в наличии</b>
+                                </div>
+                                <div>
+                                    <label>Код товара:</label><b>{{ object.article }}</b>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="column column-right">
+                        <div class="item-order">
+                            <div class="item-price">
+                                <div class="price-box price-final_price" data-role="priceBox" data-product-id="8077">
+                                    <span class="item-price price-container price-final_price tax weee">
+                                        <span id="product-price-8077" data-price-amount="44990" data-price-type="finalPrice" class="price-wrapper item-price">
+                                            <span class="price">{{ object.price }}
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <form action="#" method="post" id="product_addtocart_form_preview">
+                                    <input type="hidden" name="product" value="">
+                                    <input name="form_key" type="hidden" value="EITAB2g2H1mWh67a">
+                                    <button type="submit" title="Купить" class="action tocart primary btn btn--block btn--green btn--order">
+                                        <span>Купить</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="product item-cards-grid">
         <div class="product-coumns row">
             <div class="col-8 column column-view">
@@ -54,15 +111,20 @@
                     <div class="item-block">
                         <button type="button" class="btn btn--blue btn--block btn--largest js-all-char">Все характеристики</button>
                     </div>
+                    <div class="item-block">
+                        <button type="button" class="btn btn--red btn--block btn--largest js-all-char">Купить</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+
     <div class="product-bottom">
-        <div class="product-menu-bottom">
+        <div class="product-menu-bottom" id="bottom-menu-id">
             <div class="item-cards-grid">
-                <nav class="navbar nav-custom sticky-top">
+                <nav class="navbar nav-custom">
                     <nav class="nav bottom-menu">
                         <a class="nav-item nav-link active" href="#product_tab_description" data-toggle="tab">Описание</a>
                         <a class="nav-item nav-link" href="#product_tab_attributes" data-toggle="tab">Характеристики</a>
@@ -91,6 +153,7 @@
 
 
                     </div>
+
                 </div>
             </div>
         </div>
@@ -101,13 +164,13 @@
         <div class="item-cards-slick__cards slider autoplay">
             {% for item in list %}
             <div class="item-card slick-slide">
-                    <a href="{% url 'product' name=item.name %}" class="item-card__image-wrapper ddl_product_link">
+                    <a href="{% url 'product_item' pk=item.pk %}" class="item-card__image-wrapper ddl_product_link">
                         {% with item.image as image_static %}
                             <img alt="{{ image_static }}" src="{% static image_static %}" width="150" height="170">
                         {% endwith %}
                     </a>
                     <div class="item-card__info">
-                        <a href="{% url 'product' name=item.name %}" class="item-card__name">{{ item.name }}</a>
+                        <a href="{% url 'product_item' pk=item.pk %}" class="item-card__name">{{ item.name }}</a>
 
                         <div class="item-card__prices">
                             <div class="item-card__debet">
