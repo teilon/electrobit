@@ -69,14 +69,16 @@ h2.item-cards-grid__header{
 }
 /*
     content
+
+	border-radius:100%
 */
 .hidden-title{
+    background-color:#fff;
 	*zoom:1;
 	width:960px;
 	max-width:100%;
 	margin-left:auto;
 	margin-right:auto;
-	border-radius:100%
 	}
 /*
     product
@@ -311,6 +313,8 @@ h2.item-cards-grid__header{
     padding-top: 120px;
     z-index: 50;
 }
+
+
 /* hidden menu */
 .hidden{
     z-index: -1;

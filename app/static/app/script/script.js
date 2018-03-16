@@ -73,7 +73,7 @@ window.onscroll = function() {scrollingPanel()};
 
 function scrollingPanel(){
     headerMenuScroll();
-    productPreviewScroll();
+    //productPreviewScroll();
     bottomMenuScroll();
 }
 
@@ -96,6 +96,26 @@ function headerMenuScroll() {
 }
 
 
+var bottom_menu = document.getElementById("bottom-menu-id");
+var sticky_bottom = bottom_menu.offsetTop - 64;
+
+function bottomMenuScroll(){
+
+  console.log('sticky_bottom: ' + sticky_bottom)
+  console.log('pageYOffset: ' + pageYOffset)
+
+  if (window.pageYOffset >= sticky_bottom) {
+    bottom_menu.classList.add("is-second-sticky")
+    data_wrapper.classList.add("second-content-wrapper")
+    console.log('>')
+  } else {
+    console.log('<')
+    bottom_menu.classList.remove("is-second-sticky");
+    data_wrapper.classList.remove("second-content-wrapper")
+  }
+}
+
+
 var product_preview = document.getElementById("product-preview-id");
 var sticky_preview = product_preview.offsetTop - 64;
 
@@ -108,21 +128,5 @@ function productPreviewScroll(){
     product_preview.classList.add("hidden")
     product_preview.classList.remove("is-preview-sticky");
     data_wrapper.classList.remove("preview-content-wrapper")
-  }
-}
-
-var bottom_menu = document.getElementById("bottom-menu-id");
-//var data_wrapper = document.getElementById("content-id");
-
-// Get the offset position of the navbar
-var sticky_bottom = bottom_menu.offsetTop - 64;
-
-function bottomMenuScroll(){
-  if (window.pageYOffset >= sticky_bottom) {
-    bottom_menu.classList.add("is-second-sticky")
-    data_wrapper.classList.add("second-content-wrapper")
-  } else {
-    bottom_menu.classList.remove("is-second-sticky");
-    data_wrapper.classList.remove("second-content-wrapper")
   }
 }

@@ -7,3 +7,6 @@ app/static/app/images/product/*
 
 app/static/app/images/!auth.png!
 app/static/app/images/!logo.png!
+
+
+app/static/node_modules

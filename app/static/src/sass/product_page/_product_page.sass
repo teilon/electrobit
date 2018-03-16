@@ -1,0 +1,164 @@
+$color-background-content: #fff
+$color-line: #ddd
+$color-title-text: #000
+
+$color-meta: #2ba81e
+$color-old: red
+
+$color-a1: #0089d0
+
+
+
+
+*, :after, :before
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+.content-place
+    *zoom: 1;
+    width: 960px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 42px;
+    border-radius: 100%;
+
+.content-block
+    background-color: $color-background-content;
+    margin-top: 10px;
+    border: 1px solid #f3f3f3;
+    border-radius: 4px;
+
+.product
+
+    .item-block
+        margin: 24px auto;
+        padding: 10px auto;
+
+    .column-view
+        .product-info-main
+            border-right: 1px solid color-line;
+            margin-right: 5px;
+            padding-right: 10px;
+
+            .item-title
+                font-family: 'Montserrat', sans-serif;
+                font-size: 18px;
+                line-height: 20px;
+                margin-bottom: 7px
+
+                .title-2
+                    font-size: 25px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    margin-bottom: 18px;
+                    color: $color-title-text;
+
+            .item-meta
+                font-weight: 500;
+
+                b
+                    color: $color-a1;
+                    margin-left: 5px;
+
+                label
+                    margin: auto;
+
+                >div
+                    font-size: 14px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 20px;
+
+            .item-gallery
+                .img-centered
+                    img
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+
+    .column-side
+        .item-order
+            margin-top: 24px;
+
+        .item-oldprice
+            text-decoration: line-through;
+            color: $color-old;
+            margin-bottom: 15px;
+
+        .item-oldprice--small
+            font-size: 14px
+        .item-oldprice--middle
+            font-size: 18px
+
+        .item-price
+            padding: auto;
+
+            .price, strong
+                font-size: 54px;
+                height: 35px;
+                line-height: 35px;
+
+        .item-price--large
+            margin-bottom: 20px;
+
+        .btn--block
+            display: block;
+            width: 100%;
+
+            &:hover
+                color: #fff!important;
+                background-color: #2ba81e!important;
+                border-color: #2ba81e!important;
+
+        .btn--largest
+            font-size: 18px;
+            padding-top: 9.5px;
+            padding-bottom: 9.5px;
+
+        .btn--blue
+            color: #fff!important;
+            background-color: #0089d0!important;
+
+        .btn--red
+            color: #f26021!important;
+            background-color: #fff!important;
+            border-color: #f26021!important;
+
+            &:hover
+                color: #fff!important;
+                background-color: #f26021!important;
+                border-color: #f26021!important;
+
+.product-bottom
+    .nav-product-wrapper
+        height: 45px;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 7;
+        background-color: #eee;
+        font-size: 18px;
+
+        .nav-product
+
+            .nav
+                .nav-item
+                    color: #000;
+                    background-color: #eee;
+
+                .nav-item.active
+                    border-bottom: 5px solid #0089d0;
+                    color: #0089d0;
+
+    .product-tabs
+        margin-top: 30px;
+
+        .product-tab
+            position: relative;
+            padding-top: 20px;
+
+
+
+@import 'product_page_fixed'
